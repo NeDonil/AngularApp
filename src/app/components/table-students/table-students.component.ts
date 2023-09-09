@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Student } from 'src/app/model/Student';
+import { BaseServiceService } from 'src/app/service/base-service.service';
 
 @Component({
   selector: 'app-table-students',
@@ -9,13 +10,10 @@ import { Student } from 'src/app/model/Student';
 export class TableStudentsComponent implements OnInit {
     students !: Student[]
 
-    constructor(){}
+    constructor(private baseService: BaseServiceService){}
 
     ngOnInit(){
-        this.students = [
-            {id : 0, name :"Dima", surname : "NeDima"},
-            {id : 1, name :"Donil", surname : "NeDonil"},
-            {id : 2, name :"Alex", surname : "NeAlex"},
-        ]
+        console.log("TableStudentsComponent");
+        this.students = this.baseService.getAllStudents();
     }
 }

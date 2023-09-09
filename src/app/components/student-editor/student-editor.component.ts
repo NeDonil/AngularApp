@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Student } from 'src/app/model/Student';
+import { BaseServiceService } from 'src/app/service/base-service.service';
 
 @Component({
     selector: 'app-student-editor',
@@ -9,9 +10,14 @@ import { Student } from 'src/app/model/Student';
 export class StudentEditorComponent implements OnInit {
     editingStudent !: Student
 
-    constructor(){}
+    constructor(private baseService: BaseServiceService){}
 
     ngOnInit(){
         this.editingStudent = new Student;
+    }
+
+    addStudent(){
+        this.baseService.addNewStudent(this.editingStudent);
+        this.editingStudent = new Student();
     }
 }
