@@ -4,12 +4,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormsModule} from '@angular/forms';
-import { StudentEditorComponent } from './components/student-editor/student-editor.component'
+import { StudentEditorComponent } from './components/student-editor/student-editor.component';
+import { TableStudentsComponent } from './components/table-students/table-students.component'
 
 @NgModule({
   declarations: [
     AppComponent,
-    StudentEditorComponent
+    StudentEditorComponent,
+    TableStudentsComponent
   ],
   imports: [
     FormsModule,
