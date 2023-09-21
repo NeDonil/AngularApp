@@ -10,7 +10,11 @@ import { Student } from 'src/app/model/Student';
 export class DialogEditWrapperComponent {
     editingStudent!: Student;
     constructor(public dialogRef: MatDialogRef<DialogEditWrapperComponent>,
-        @Inject(MAT_DIALOG_DATA) public data: Student){}
+        @Inject(MAT_DIALOG_DATA) public data: Student){
+            if(data != null){
+                this.editingStudent = data;
+            }
+        }
 
     ngOnInit(){
         this.editingStudent = new Student();

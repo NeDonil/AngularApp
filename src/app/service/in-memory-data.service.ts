@@ -8,10 +8,10 @@ import { Student } from '../model/Student';
 export class InMemoryDataService implements InMemoryDbService{
     createDb(){
         const students = [
-            {id: 0, name: 'Name1', surname: "Surname1"},
-            {id: 1, name: 'Name2', surname: "Surname2"},
-            {id: 2, name: 'Name3', surname: "Surname3"},
-            {id: 3, name: 'Name4', surname: "Surname4"}
+            {id: 0, name: 'Ivan', surname: "Ivanov"},
+            {id: 1, name: 'Ivan', surname: "Search"},
+            {id: 2, name: 'Danil', surname: "Wantropp"},
+            {id: 3, name: 'Alex', surname: "Willson"}
         ];
         return {students};
     }

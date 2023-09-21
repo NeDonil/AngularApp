@@ -33,4 +33,25 @@ export class TableStudentsComponent implements OnInit {
             }
         });
     }
+
+    editStudent(student: Student){
+        const dialogEditingStudent = this.dialog.open(DialogEditWrapperComponent, {
+            width: "400px",
+            data: student
+        });
+
+        dialogEditingStudent.afterClosed().subscribe((student: Student) => {
+            if(student != null){
+                this.baseService.editStudent(student).subscribe(k =>
+                    this.baseService.getAllStudents().subscribe(data => this.students = data));
+            }
+        });
+    }
+
+    deleteStudent(studentId: number){
+        if(studentId != null){
+            this.baseService.deleteStudent(studentId).subscribe(k =>
+                this.baseService.getAllStudents().subscribe(data => this.students = data));;
+        } 
+    }
 }

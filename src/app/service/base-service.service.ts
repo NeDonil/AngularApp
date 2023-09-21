@@ -20,4 +20,14 @@ export class BaseServiceService {
         console.log("AddNewStudent");
         return this.http.post<Student>(this.studentsUrl, student).pipe();
     }
+
+    editStudent(student: Student): Observable<Student>{
+        console.log("EditStudent " + student.id);
+        return this.http.put<Student>(this.studentsUrl + "/" + student.id, student).pipe();
+    }
+
+    deleteStudent(studentId: number): Observable<Student> {
+        console.log("Delete " + studentId);
+        return this.http.delete<Student>(this.studentsUrl + "/" + studentId).pipe();
+    }
 }
