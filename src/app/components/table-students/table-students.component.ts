@@ -3,6 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { Student } from 'src/app/model/Student';
 import { BaseServiceService } from 'src/app/service/base-service.service';
 import { DialogEditWrapperComponent } from '../student-editor/dialog-edit-wrapper/dialog-edit-wrapper.component';
+import { StudentEditorWrapperComponent } from '../student-editor/student-editor-wrapper/student-editor-wrapper.component';
 
 @Component({
   selector: 'app-table-students',
@@ -35,12 +36,12 @@ export class TableStudentsComponent implements OnInit {
     }
 
     editStudent(student: Student){
-        const dialogEditingStudent = this.dialog.open(DialogEditWrapperComponent, {
+        const studentEditingStudent = this.dialog.open(StudentEditorWrapperComponent, {
             width: "400px",
-            data: student
+            data: {id: student.id, name: student.name, surname: student.surname}
         });
 
-        dialogEditingStudent.afterClosed().subscribe((student: Student) => {
+        studentEditingStudent.afterClosed().subscribe((student: Student) => {
             if(student != null){
                 this.baseService.editStudent(student).subscribe(k =>
                     this.baseService.getAllStudents().subscribe(data => this.students = data));

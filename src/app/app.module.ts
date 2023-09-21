@@ -14,12 +14,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './service/in-memory-data.service';
 import {MatButtonModule} from '@angular/material/button';
+import { StudentEditorWrapperComponent } from './components/student-editor/student-editor-wrapper/student-editor-wrapper.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TableStudentsComponent,
-    DialogEditWrapperComponent
+    DialogEditWrapperComponent,
+    StudentEditorWrapperComponent
   ],
   imports: [
     FormsModule,
