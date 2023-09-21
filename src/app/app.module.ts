@@ -13,6 +13,7 @@ import { DialogEditWrapperComponent } from './components/student-editor/dialog-e
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './service/in-memory-data.service';
+import {MatButtonModule} from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { InMemoryDataService } from './service/in-memory-data.service';
     FormsModule,
     BrowserModule,
     AppRoutingModule,
+    MatButtonModule,
     MatDialogModule,
     BrowserAnimationsModule,
     MatFormFieldModule,
