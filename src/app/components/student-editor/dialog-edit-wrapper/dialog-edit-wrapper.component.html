@@ -13,7 +13,8 @@
 </mat-form-field>
 
 <div mat-dialog-actions>
-    <button mat-raised-button (click)="onNoClick()">Cancel</button>
-    <button class="right-align" mat-raised-button color="primary"
+    <button mat-raised-button color="primary"
     [mat-dialog-close]="editingStudent">Add</button>
+    
+    <button class="right-align" mat-raised-button (click)="onNoClick()">Cancel</button>
 </div>
