@@ -18,6 +18,7 @@ import { StudentEditorWrapperComponent } from './components/student-editor/stude
 import { MatTableStudentComponent } from './components/mat-table-student/mat-table-student.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     MatInputModule,
     HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, {dataEncapsulation: false}),
-    MatTableModule, MatPaginatorModule
+    MatTableModule, MatPaginatorModule,
+    MatSortModule
   ],
   providers: [
     { provide: MAT_DIALOG_DATA, useValue: {} },
