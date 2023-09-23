@@ -25,4 +25,9 @@ public class StudentService {
     public StudentEntity createStudent(StudentEntity student){
         return studentRepository.save(student);
     }
+
+    public StudentEntity updateStudent(long studentId, StudentEntity student){
+        return studentRepository.save(student);
+    }
+    public void deleteStudent(long studentId){studentRepository.deleteById(studentId);}
 }

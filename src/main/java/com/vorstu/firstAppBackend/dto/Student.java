@@ -6,7 +6,7 @@ import lombok.Data;
 public class Student {
     public Student(){}
 
-    private String fio;
-    private String group;
+    private String name;
+    private String lastname;
     private String phoneNumber;
 }

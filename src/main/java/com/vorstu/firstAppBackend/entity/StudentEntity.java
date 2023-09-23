@@ -5,16 +5,21 @@ import jakarta.persistence.Id;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Data
+@NoArgsConstructor
 public class StudentEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long Id;
 
-    private String fio;
-
-    private String edgroup;
+    private String name;
+    private String surname;
+    public StudentEntity(String name, String surname){
+        this.name = name;
+        this.surname = surname;
+    }
 }
