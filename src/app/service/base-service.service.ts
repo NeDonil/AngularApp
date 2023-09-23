@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class BaseServiceService {
 
-    private studentsUrl="api/students";
+    private studentsUrl="api/base";
 
     constructor(private http: HttpClient) { }
 
